@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "team_id": "contest2026_000_openvela",
+  "github_login": "yanxingyu17",
+  "generator": "claude-code-collector@1.1.1",
+  "sessions": [
+    {
+      "session_id": "528e005f-62b7-430e-9abf-b9a8889e33a5",
+      "tool": "claude-code",
+      "started_at": "2026-06-15T09:10:23.967Z",
+      "last_event_at": "2026-06-15T09:10:35.127Z",
+      "event_count": 2,
+      "raw_event_count": 5,
+      "file_path": "logs/yanxingyu17/2026-06-15/claude-code__528e005f-62b7-430e-9abf-b9a8889e33a5.jsonl",
+      "collection_mode": "cli",
+      "health": "ok"
+    }
+  ],
+  "updated_at": "2026-06-15T09:10:52.893436+00:00"
+}
