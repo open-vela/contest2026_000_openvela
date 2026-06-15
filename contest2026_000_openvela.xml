@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<manifest>
+  <remote fetch="../open-vela/" name="openvela"/>
+  <default remote="openvela" revision="dev-ai-contest-2026"/>
+
+  <!--
+    Single repo per team. The whole team repo is checked out at
+    contest2026_000_openvela/, and each work-form subdirectory is exposed
+    to its openvela working-tree location via <linkfile>. Production repos
+    (packages_demos / packages_apps / vendor_openvela) are NOT modified.
+  -->
+  <project path="contest2026_000_openvela" name="contest2026_000_openvela">
+    <linkfile src="app/hello_app" dest="packages/demos/contest2026_000_hello_app"/>
+    <linkfile src="quickapp/hello_quickapp" dest="packages/apps/contest2026_000_hello_quickapp"/>
+    <linkfile src="board/contest_board" dest="vendor/openvela/boards/contest2026_000_board"/>
+  </project>
+</manifest>
