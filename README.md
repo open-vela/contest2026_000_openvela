@@ -59,8 +59,10 @@ repo sync -c -j8
 ```text
 app/ | quickapp/ | board/   # 你的作品代码
 logs/                       # AI Coding 日志（主动导出后提交）
-README.md                   # 作品名称、所属赛道、运行方式、简介
+README.md                   # 作品说明（提交前请改成你自己的，见第六节）
 ```
+
+> 仓内附带了一个 `.gitignore.example`，给出了**编译产物**等不需要进仓的文件示例。如需启用，`cp .gitignore.example .gitignore` 后按需增删即可。**注意 `logs/` 下最终导出的 AI Coding 日志必须提交，不要忽略。**
 
 ---
 
@@ -72,7 +74,17 @@ README.md                   # 作品名称、所属赛道、运行方式、简�
 - AI 硬件产品创新：[AI 硬件赛道教程导航](https://github.com/open-vela/docs/blob/dev-ai-contest-2026/zh-cn/contest_2026/ai_hardware/ai_hardware_guide_index.md)（环境搭建、编译烧录、Skill 开发）。
 - 新硬件适配：[新硬件适配赛道教程导航](https://github.com/open-vela/docs/blob/dev-ai-contest-2026/zh-cn/contest_2026/hardware_porting/hardware_porting_guide_index.md)（BSP 移植、最小 NSH 基线）。
 
-因为子目录已软链进 openvela 工程，按指南在 openvela 工作区正常 `build.sh` 即可看到你的代码。
+子目录已通过 manifest 中的 `<linkfile>` 软链进 openvela 编译树，因此构建在 openvela 工作区**根目录**（即你这个仓的上一级）进行。openvela 使用 `build.sh` 作为统一入口，接收一个 **board config 路径**作为参数：
+
+```bash
+# 进入 openvela 工作区根目录（你的仓的上一级）
+cd ..
+
+# 通用语法：第一个参数是 board config 路径，第二个参数可以是 menuconfig / distclean 等
+./build.sh <board-config-path> [menuconfig|distclean] [-j8]
+```
+
+> 具体的 board config 路径、目标产物、模拟器/真机部署方式请以你所在赛道的教程导航为准。本仓 `app/` `quickapp/` `board/` 三个示例骨架对应的 Kconfig 选项可通过 `menuconfig` 启用。
 
 ---
 
@@ -90,6 +102,41 @@ README.md                   # 作品名称、所属赛道、运行方式、简�
 
 - 本仓所有改动通过 **Pull Request** 合入（分支保护强制，可自行合入自己的 PR）。
 - 首次贡献需在**官网签署 CLA**；PR 上会自动跑 `cla/signature` 检查，在官网签署成功后，在 PR 评论 `/check-cla` 复检即可通过。
+
+---
+
+## 六、提交前：把本 README 改成你的作品说明
+
+本文件目前是组委会给的**使用说明书**。**作品提交前，请把它替换成你自己作品的说明**，方便评委快速了解你做了什么、怎么跑起来。建议至少包含以下内容：
+
+```markdown
+# <你的作品名>
+
+## 一、作品简介
+<一句话/一段话说明这个作品是什么、解决什么问题、亮点在哪>
+
+## 二、选题方向
+<快应用 / 手表应用创新 ｜ AI 硬件产品创新 ｜ 新硬件适配 ｜ 自定方向，并简述理由>
+
+## 三、目录结构
+<列出你这个仓里各目录/文件的作用，例如：>
+- `app/xxx/`        — <说明>
+- `board/xxx/`      — <说明>
+- `quickapp/xxx/`   — <说明>
+- `logs/`           — AI Coding 日志
+- `docs/` 或其他    — <说明>
+
+## 四、运行方式
+<拉取工程后，如何编译、烧录/部署、运行的完整步骤；最好能让评委照着一步步复现>
+
+## 五、AI Coding 使用说明
+<说明本作品如何借助 AI 辅助开发：
+- 在需求拆解 / 方案设计 / 编码 / 调试 / 文档等环节如何与 AI 协作；
+- AI 对开发效率或质量带来的实际帮助。
+完整对话日志见 logs/ 目录>
+```
+
+> 提示：将会根据「作品本身 + 你的 README 说明 + `logs/` 里的 AI Coding 日志」来理解和评估你的作品，README 写清楚很重要。
 
 ---
 
