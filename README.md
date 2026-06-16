@@ -89,7 +89,7 @@ README.md                   # 作品名称、所属赛道、运行方式、简�
 ### 关于 PR 与 CLA
 
 - 本仓所有改动通过 **Pull Request** 合入（分支保护强制，可自行合入自己的 PR）。
-- 首次贡献需签署 **CLA**，PR 上会自动跑 `cla/signature` 检查；未签署按提示在 PR 评论 `/check-cla` 复检。
+- 首次贡献需在**官网签署 CLA**；PR 上会自动跑 `cla/signature` 检查，在官网签署成功后，在 PR 评论 `/check-cla` 复检即可通过。
 
 ---
 
