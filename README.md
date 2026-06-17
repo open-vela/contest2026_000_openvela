@@ -58,11 +58,13 @@ repo sync -c -j8
 
 ```text
 app/ | quickapp/ | board/   # 你的作品代码
-logs/                       # AI Coding 日志（主动导出后提交）
+logs/                       # AI Coding 日志（主动导出后提交，格式见 logs/README.md）
 README.md                   # 作品说明（提交前请改成你自己的，见第六节）
 ```
 
 > 仓内附带了一个 `.gitignore.example`，给出了**编译产物**等不需要进仓的文件示例。如需启用，`cp .gitignore.example .gitignore` 后按需增删即可。**注意 `logs/` 下最终导出的 AI Coding 日志必须提交，不要忽略。**
+>
+> `logs/` 的目录结构与提交格式见 [logs/README.md](logs/README.md)。
 
 ---
 
